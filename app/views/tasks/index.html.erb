@@ -7,7 +7,10 @@
           <% else %>
             <i class="far fa-square"></i>
           <% end %>
-      <%=task.title%> </li>
+      <%= link_to task.title, task_path(task) %>
+      <i class="fas fa-trash-alt"></i>
+      <%= link_to 'Delete me', task_path(task), method: :delete %></li>
   <% end %>
 </ol>
 
+ <%= link_to "Add task", new_task_path %>
